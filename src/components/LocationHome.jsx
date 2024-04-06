@@ -1,33 +1,23 @@
-import { FiMapPin } from "react-icons/fi";
-import { CiCalendarDate } from "react-icons/ci";
-import { FaStar } from "react-icons/fa";
-
-
+import Card from "../components/Card";
 import { Link } from "react-router-dom";
+import locationData from "../data";
 function LocationHome() {
   return (
     <div className="flex justify-center max-w-[1300px] mx-auto w-full items-center mt-20">
       <div className=" w-full">
-        <div className="flex justify-between w-full">
-          <p>Locations</p>
-          <Link>View All</Link>
+        <div className="flex justify-between w-full  mb-4">
+          <p className="font-bold">Locations</p>
+          <Link className="font-bold text-teal-500">View All</Link>
         </div>
-        <div>
-          <div className="w-80 ">
-            <img src="/hero.jpg" alt="card" className="rounded-lg" />
-            <div className="flex items-center w-full justify-between">
-              <div className="flex items-center  ">
-                <CiCalendarDate /> <p>6 Days</p>
-              </div>
-              <div className="flex items-center  ">
-                <FaStar /> <p>6 Days</p>
-              </div>
-            </div>
-            <h4>
-              <FiMapPin />
-              California
-            </h4>
-          </div>
+        <div className="flex justify-between">
+          {locationData.map((el, i) => (
+            <Card
+              key={i}
+              location={el.location}
+              img={el.img}
+              price={el.price}
+            />
+          ))}
         </div>
       </div>
     </div>
