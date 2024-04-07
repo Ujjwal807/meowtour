@@ -43,4 +43,5 @@ function Card({ location, img, price }) {
   );
 }
 
+
 export default Card;

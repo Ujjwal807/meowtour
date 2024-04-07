@@ -1,6 +1,6 @@
 function Navbar() {
     return (
-        <div>
+        <div className="w-full">
             Nav
         </div>
     )
